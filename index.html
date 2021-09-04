@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax example</title>
+</head>
+<body>
+    <button onclick="loaddata()">get text file datas</button>>
+    <div id="mes">
+        this is mes div box
+        </div>>
+		<script>
+		function loaddata(){
+			//alert("test");
+			var a=new XMLHttpRequest();
+            a.onreadystatechange=function(){
+                if(this.readyState==4 && this.status==200){
+                    document.getElementById("mes").innerHTML=this.responseText;
+                }
+            };
+            a.open("GET","jarvin.txt",true);
+            a.send();
+		}
+		</script>
+        
+</body>
+</html>
